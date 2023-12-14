@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: black;
+}
+
+.caixa {
+    position: relative;
+    width: 60%;
+    height: 80%;
+    color: #fff;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    font: bold 2em 'Century Gothic';
+    text-transform: uppercase;
+    text-align: center;
+}
+
+
+.caixa::before, .caixa::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    background: linear-gradient(45deg,#00ff00, rgba(0, 0, 0, 0.333), #00ff00, rgba(0, 0, 0, 0.333), #00ff00, rgba(0, 0, 0, 0.333) );
+    background-size: 200%;
+    border-radius: 4px;
+    animation: Animarborda 8s linear alternate infinite;
+
+}
+
+@keyframes Animarborda {
+    0% {
+        background-position: 0;
+    }
+    100%{
+        background-position: 300%;
+    }
+}
+
+
+.caixa::after {
+    filter: blur(20px);
+}
